@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  nats:
+    image: nats:latest
+    container_name: stock_nats
+    ports:
+      - "4222:4222" # Client communication
+      - "8222:8222" # Management communication
+    command: "-js" # Enables JetStream capability
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: stock_postgres
+    environment:
+      POSTGRES_USER: 'simulator_admin'
+      POSTGRES_PASSWORD: 'SimulatorAdminPassword2026'
+      POSTGRES_DB: 'StockSimulatorDb'
+    ports:
+      - "5439:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

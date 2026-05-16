@@ -1,0 +1,17 @@
+# Visual Studio temporary files and caches
+.vs/
+BaseIntermediateOutputPath/
+BenchmarkDotNet_Artifacts/
+obj/
+bin/
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS generated files
+.DS_Store
+Thumbs.db
